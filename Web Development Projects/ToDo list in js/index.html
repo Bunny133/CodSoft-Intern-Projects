@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>To-Do List</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="icon" type="image/x-icon"
+        href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_M6SzMy82SMHPAcWvpDIZoTiPKYXvhxnswA&usqp=CAU">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body style="background-color:#0c1a29;">
+    
+    <nav class="navbar navbar-expand-lg fixed-top "style=
+    " background-color:#283742;">
+        <div class="container-fluid">
+            <a class="navbar-brand fw-bold fs-2  text-success " href="#">ToDo List</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+               
+            </div>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMuW4DEa0ki5b_hP7ok2Y7h7F5ET2bCe5kaA&usqp=CAU"
+                alt="#" class="d-flex" height="70px">
+        </div>
+    </nav>
+
+    <style>
+        /* Your existing CSS rules */
+        .list-of-tasks {
+            margin-top: 8rem;
+        }
+    </style>
+    <!-- List a task -->
+    <div class="container p-3 bg-info bg-opacity-10 border border-info border-start-0 rounded-end list-of-tasks">
+        <h1 class="fst-italic text-primary "><u>List a Task</u></h1>
+        <div class="input-group  my-3" style="width:30% ;">
+            <div class="input-group-text bg-info" id="btnGroupAddon">TaskTitle</div>
+            <input type="text" class="form-control" placeholder="Enter note title " aria-label="Input group example"
+                aria-describedby="btnGroupAddon">
+            <button type="button" id="EnterBtn" class="btn btn-success ms-2">Enter</button>
+        </div>
+        <div class="input-group  my-2" style="width:70% ;">
+            <textarea id='note' class="form-control" aria-label="With textarea"
+                placeholder="Write your note here..."></textarea>
+            <button class="btn btn-outline-success bg-info" id="save" type="submit">Save</button>
+        </div>
+    </div>
+
+    <!-- Read a Task -->
+    <div class="container p-3 bg-warning bg-opacity-25 border border-warning border-start-0 rounded-end my-5">
+        <h1 class="fst-italic text-warning "><u>Read Your Tasks</u></h1>
+        <div class="input-group  my-3" style="width:30% ;">
+            <div class="input-group-text bg-warning" id="btnGroupAddon">TaskTitle</div>
+            <input type="text" class="form-control" placeholder="Enter note title " aria-label="Input group example"
+                aria-describedby="btnGroupAddon">
+            <button type="button" id="ReadBtn" class="btn btn-success ms-2">Read</button>
+        </div>
+
+        <button type="button" id="ShowAll" class="btn btn-warning ms-2 " data-bs-toggle="modal"
+            data-bs-target="#ShowAllModal" style="float: right;">ShowAll</button>
+        <div class="input-group  my-2" style="width:70% ;">
+            <textarea id='Readarea' readonly class="form-control" aria-label="With textarea"
+                placeholder="Your Notes appear here..."></textarea>
+        </div>
+    </div>
+    <!-- ShowAll modal -->
+    <div class="modal fade" id="ShowAllModal" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="ModalLabel">All Tasks</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="modalMain">
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Delete a Task -->
+    <div class="container p-3 bg-danger bg-opacity-50 border border-danger border-start-0 rounded-end my-5">
+        <h1 class="fst-italic text-danger "><u>Delete a Task</u></h1>
+        <div class="input-group   my-3" style="width:30% ;">
+            <div class="input-group-text bg-danger id=" btnGroupAddon">TaskTitle</div>
+            <input type="text" class="form-control" placeholder="Enter note title " aria-label="Input group example"
+                aria-describedby="btnGroupAddon">
+            <button type="button" id="DelBtn" class="btn btn-success ms-2">Delete</button>
+        </div>
+        <button type="button" id="DelAll" class="btn btn-danger ms-2" style="float: right;">DeleteAll</button>
+        <div class="input-group  my-2" style="width:70% ;">
+            <textarea id='Delarea' readonly class="form-control text-danger" aria-label="With textarea"
+                placeholder="Delete Status appears here...">Delete Status:</textarea>
+        </div>
+    </div>
+
+    <!-- Update a Task -->
+    <div class="container p-3 bg-light bg-opacity-25 border border- border-start-0 rounded-end my-5">
+        <h1 class="fst-italic text-light "><u>Update a Task</u></h1>
+        <div class="input-group  my-3" style="width:30% ;">
+            <div class="input-group-text bg-secondory id=" btnGroupAddon">TaskTitle</div>
+            <input type="text" class="form-control" placeholder="Enter note title " aria-label="Input group example"
+                aria-describedby="btnGroupAddon">
+            <button type="button" id="UpdtEntBtn" class="btn btn-success ms-2">Enter</button>
+        </div>
+        <div class="input-group  my-2" style="width:70% ;">
+            <textarea id='Updtarea' class="form-control text-danger" aria-label="With textarea"
+                placeholder="Write Updated text here..."></textarea>
+            <button class="btn btn-outline-success bg-info" id="UpdtBtn" type="submit">Update</button>
+        </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+        crossorigin="anonymous"></script>
+
+
+    <script src="index.js"></script>
+
+
+</body>
+
+</html>

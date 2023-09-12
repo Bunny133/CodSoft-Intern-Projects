@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&family=Ubuntu:wght@300&display=swap');
+html, body {
+  height: 100%;
+  width: 100%;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+  
+}
+
+.container{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+    background: rgb(91, 117, 164);
+    
+}
+.select{
+    width: 25%;
+    padding: 20px;
+    background: #1b3757;
+    color: aliceblue;
+    border: 2px solid rgb(120, 58, 159);
+
+}
+.select h1 {
+  /* margin-left: 25px; */
+  color: #000;
+  text-shadow:
+    0 0 7px #fff,
+    0 0 10px #fff,
+    0 0 15px #fff,
+    0 0 15px #06ecfd,
+    0 0 15px #06ecfd,
+    0 0 15px #06ecfd,
+    0 0 15px #06ecfd,
+    0 0 15px #06ecfd;
+}
+.button{
+  width: 60px;
+  padding: 20px;
+  margin: 2px 4px;
+  border: 2px solid rgb(120, 58, 159);
+  border-radius: 9px;
+  cursor: pointer;
+  -webkit-border-radius: 9px;
+  -moz-border-radius: 9px;
+  -ms-border-radius: 9px;
+  -o-border-radius: 9px;
+}
+.Row input{
+    width: 251px;
+    padding: 20px;
+    margin: 8px 0;
+    border: 2px solid rgb(120, 58, 159);;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    -webkit-border-radius: 5px;
+}
+.button1{
+    width: 130px;
+    padding: 17px;
+    border: 2px solid rgb(120, 58, 159);;
+    border-radius:  5px;
+    /* margin-right: px; */
+    -webkit-border-radius:  5px;
+    -moz-border-radius:  5px;
+    -ms-border-radius:  5px;
+    -o-border-radius:  5px;
+}
+.btn{
+  margin-left: 0.5rem;
+}
